@@ -8,7 +8,7 @@ using namespace std;
 
 class stack
 {
-	int data[10];
+	int data[SIZE];
 	int top;
 public:
 	void push(int);
