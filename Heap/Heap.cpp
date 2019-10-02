@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class Heap
+class Heap   //creating a Heap Class
 {
 	int data[heapSize];
 	int current;
@@ -19,7 +19,7 @@ class Heap
 		}
 		current = -1;
 	}
-	void insert(int);
+	void insert(int);   //Declaring the functions
 	bool isFull();
 	void fixHeap(int);
 	void heapSort();
@@ -43,7 +43,7 @@ void Heap :: insert(int value)
 		cout<<"Heap is Full!"<<endl;
 		return;
 	}
-	
+
 	current += 1;
 	/* TIP- Element fills in sequence in heap i.e 0, 1, 2, 3, 4... */
 	data[current] = value;
@@ -85,7 +85,7 @@ void Heap :: heapSort()
 		data[0] = temp;
 
 		cout<<data[current-i]<<"\t";
-		
+
 		max_heap(0, current -i - 1);
 	}
 	cout<<endl;
@@ -116,7 +116,7 @@ void Heap :: max_heap(int rootIndex, int UB)
 				else
 					childToSwap = leftChild;
 			}
-			
+
 			if (data[rootIndex] < data[childToSwap])
 			{
 				temp = data[rootIndex];
@@ -128,7 +128,7 @@ void Heap :: max_heap(int rootIndex, int UB)
 				/* After this the children hold good the max_heap property */
 				break;
 			}
-			
+
 			rootIndex = childToSwap;
 			leftChild = 2*rootIndex+1;
 			rightChild = 2*rootIndex+2;
@@ -167,7 +167,7 @@ int main()
 	menu();
 	char choice[2];
 	int quit = 0, value;
-	Heap obj;
+	Heap obj;  //creating an object
 	while(!quit)
 	{
 		cout<<"Please Enter your choice: ";
@@ -179,7 +179,7 @@ int main()
 					cin>>value;
 					obj.insert(value);
 					break;
-			
+
 			case 2: cout<<"Deleted Item is :"<<obj.deleteRoot()<<endl;
 					break;
 
@@ -198,4 +198,3 @@ int main()
 
 	return 0;
 }
-

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class node
+class node  //creating a node class
 {
 public:
 	int data;
@@ -23,30 +23,31 @@ public:
     	{
         	head = NULL;
         	tail = NULL;
-		nodeCount = 0;
+	       	nodeCount = 0;
     	}
-    	void insertAtHead(int);
-	void insertAtTail(int);
-	void displayData();
-	void displayDetail();
-	int deleteHead();
-	int deleteTail();
-	node* find(int, node**);
-	int deleteTarget(int);
-	void printReverse();
-	void reverse(node*);
-        ~linkedList()
-        {
-            node* prev=NULL;
-            node* temp=head;
-            while(temp!=NULL)
-                {
-                    //cout<<"Memory is being freed"<<endl;
-                    prev=temp;
-                    temp=prev->next;
-                    free(prev);
-                }
-        }
+		 	void insertAtHead(int);   //Declaring the functions
+			void insertAtTail(int);
+			void displayData();
+			void displayDetail();
+			int deleteHead();
+			int deleteTail();
+			node* find(int, node**);
+			int deleteTarget(int);
+			void printReverse();
+			void reverse(node*);
+
+      ~linkedList()
+      {
+          node* prev=NULL;
+          node* temp=head;
+          while(temp!=NULL)
+              {
+                  //cout<<"Memory is being freed"<<endl;
+                  prev=temp;
+                  temp=prev->next;
+                  free(prev);
+              }
+      }
 };
 
 void linkedList :: insertAtHead(int value)
@@ -79,8 +80,8 @@ void linkedList :: insertAtTail(int value)
     	temp=(node*)malloc(sizeof(node));
     	if(temp==NULL)
     	{
-		cout<<"Unable to allocate memory for Node"<<endl;
-		return;
+		   cout<<"Unable to allocate memory for Node"<<endl;
+		   return;
     	}
 	temp->data=value;
 	temp->next=NULL;
@@ -346,7 +347,3 @@ int main()
 		}
 	}
 }
-
-
-
-

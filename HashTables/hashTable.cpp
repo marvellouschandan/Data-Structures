@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class hashTable
+class hashTable   //creating a class
 {
 	char keys[SIZE][20];
 	int values[SIZE];
@@ -29,8 +29,8 @@ void hashTable :: get()
 	cout<<"Enter the key: ";
 	cin>>key;
 
-	int index = hashFunction(key);
-	
+	int index = hashFunction(key);  //initialising
+
 	while (strcmp(keys[index],"\0") != 0)
 	{
 		/* Loop runs till it gets an NULL string */
@@ -44,7 +44,7 @@ void hashTable :: get()
 
 		index = (index+1) % SIZE;
 	}
-	
+
 	cout<<"Key not found!"<<endl;
 }
 
@@ -69,7 +69,7 @@ void hashTable :: put()
 		}
 
 		index = (index+1) % SIZE;
-	}
+	 }
 
 	cout<<"Enter the value: ";
 	cin>>value;
@@ -83,7 +83,7 @@ int hashTable :: hashFunction(char key[])
 	e.g- "Hello" has ASCII value of 500, so index is 0 */
 
 	int sum=0;
-	
+
 	for(int i=0; i < strlen(key); i++)
 	{
 		sum = sum + key[i];
@@ -106,7 +106,7 @@ int main()
 	system("clear");
 	char choice[2];
 	int quit = 0;
-	
+
 	hashTable obj;
 	menu();
 	while (!quit)
@@ -124,7 +124,7 @@ int main()
 
 			case 3: quit++;
 					break;
-					
+
 			default: cout<<"Wrong Input!"<<endl;
 		}
 	}
